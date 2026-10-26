@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Inzare. Минеральная вода и напитки из самого сердца Чечни. Продукция, производство, история и контакты компании."
+    />
+    <meta name="theme-color" content="#131c1b" />
+    <title>Inzare | Чеченские минеральные воды</title>
+    <link rel="icon" type="image/png" href="/assets/brand-small.png" />
+    <script>
+      const selectedDesign =
+        new URLSearchParams(location.search).get("design") === "3" ? "3" : "1";
+      document.documentElement.dataset.design = selectedDesign;
+      if (location.pathname === "/") {
+        const mobileHero = matchMedia("(max-width: 767px)").matches;
+        const heroFile =
+          selectedDesign === "3"
+            ? mobileHero
+              ? "hero-dark-small"
+              : "hero-dark"
+            : mobileHero
+              ? "hero-light-mobile"
+              : "hero-light";
+        const preload = document.createElement("link");
+        preload.rel = "preload";
+        preload.as = "image";
+        preload.href = "/assets/" + heroFile + ".webp";
+        preload.fetchPriority = "high";
+        document.head.append(preload);
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-BrMBAUB3.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CScBT6xm.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
