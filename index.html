@@ -7,33 +7,26 @@
       name="description"
       content="Inzare. Минеральная вода и напитки из самого сердца Чечни. Продукция, производство, история и контакты компании."
     />
-    <meta name="theme-color" content="#131c1b" />
-    <title>Inzare | Чеченские минеральные воды</title>
+    <meta name="theme-color" content="#f7f9fa" />
+    <title>Inzare, чеченские минеральные воды</title>
     <link rel="icon" type="image/png" href="/inzare/assets/brand-small.png" />
     <script>
-      const selectedDesign =
-        new URLSearchParams(location.search).get("design") === "3" ? "3" : "1";
-      document.documentElement.dataset.design = selectedDesign;
-      if (location.pathname === "/") {
-        const mobileHero = matchMedia("(max-width: 767px)").matches;
-        const heroFile =
-          selectedDesign === "3"
-            ? mobileHero
-              ? "hero-dark-small"
-              : "hero-dark"
-            : mobileHero
-              ? "hero-light-mobile"
-              : "hero-light";
+      if (location.pathname === "/inzare/") {
         const preload = document.createElement("link");
         preload.rel = "preload";
         preload.as = "image";
-        preload.href = "/inzare/assets/" + heroFile + ".webp";
+        preload.href =
+          "/inzare/assets/" +
+          (matchMedia("(max-width: 767px)").matches
+            ? "hero-light-mobile"
+            : "hero-light") +
+          ".webp";
         preload.fetchPriority = "high";
         document.head.append(preload);
       }
     </script>
-    <script type="module" crossorigin src="/inzare/assets/index-BrMBAUB3.js"></script>
-    <link rel="stylesheet" crossorigin href="/inzare/assets/index-CScBT6xm.css">
+    <script type="module" crossorigin src="/inzare/assets/index-I6ybZKLk.js"></script>
+    <link rel="stylesheet" crossorigin href="/inzare/assets/index-gin0uzzW.css">
   </head>
   <body>
     <div id="root"></div>
